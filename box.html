@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model</title>
+    <style>
+        section{
+            background-color: black;
+            border-radius: 18px;
+            height: auto;
+            display: grid;
+            place-content: center;
+        }
+
+        .box {
+            transition: all 0.5s ease;
+            color: white;
+        }
+        .last{
+            padding-top: 20px;
+            text-align: center;
+        }
+        .last a{
+
+            text-decoration: none;
+            color: white;
+            background-color: black;
+            padding: 4px;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Box Model</h1>
+    <section>
+        <div class="container">
+            <div class="box">CONTENT</div>
+        </div>
+
+    </section>
+
+
+    <h2>CSS Box Model</h2>
+    <label>.box { </label><br>
+    <label>&nbsp; &nbsp;border:<input id="border" placeholder="e.g., 1px solid white">;</label><br>
+    <label>&nbsp; &nbsp;padding:<input id="padding" placeholder="e.g., 10px, 1em, 5%">;</label><br>
+    <label>&nbsp; &nbsp;margin:<input id="margin" placeholder="e.g., 10px, 1em, 5%">;</label><br>
+    <label>&nbsp; &nbsp;color:<input id="color" placeholder="e.g.,hsl, rgb, #ffffff">;</label><br>
+    <label>}</label>
+    <p class="last">Rate this Project <a href="https://github.com/Bibek00Kr/box-border-colour">GitHub</a></p>
+
+    <script>
+        let box = document.querySelector(".box");
+        let borderInput = document.getElementById("border");
+        let paddingInput = document.getElementById("padding");
+        let marginInput = document.getElementById("margin");
+        let colorInput = document.getElementById("color");
+
+
+
+        borderInput.addEventListener("input", () => {
+            box.style.border = borderInput.value;
+        });
+        paddingInput.addEventListener("input", () => {
+            box.style.padding = paddingInput.value;
+        });
+        marginInput.addEventListener("input", () => {
+            box.style.margin = marginInput.value;
+        });
+        colorInput.addEventListener("input", () => {
+            box.style.color = colorInput.value;
+        });
+    </script>
+</body>
+
+</html>

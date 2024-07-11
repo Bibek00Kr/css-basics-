@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            margin: 10px;
+            padding: 30px;
+            border: 1px solid black;
+            border-radius: 8px;
+            background-color: black;
+        }
+
+        .edit {
+            padding: 10% 0 10%;
+            border: 1px solid black;
+            border-radius: 8px;
+            background-color: white;
+
+        }
+
+        h1 {
+            transition: all 0.5s ease;
+            text-align: left;
+        }
+        .TA{
+            margin: 20px;
+        }
+        .TA h1,p{
+            padding: 10px;
+        }
+        .last{
+            padding-top: 20px;
+            text-align: center;
+        }
+        .last a{
+
+            text-decoration: none;
+            color: white;
+            background-color: black;
+            padding: 4px;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Text & Fonts</h1>
+    <div class="box">
+        <div class="edit">
+            <h1 id="text">Hello Learners!</h1>
+        </div>
+    </div>
+    <hr>
+    <div class="TA">
+        <h1>Text Align</h1>
+        <p>text-align: <input id="align" type="text" placeholder="left, center, right">;</p>
+        <h1>Font size</h1>
+        <p>font-size: <input id="font" type="text" placeholder="px,em,%">;</p>
+        <p class="last">Rate this Project <a href="https://github.com/Bibek00Kr/box-border-colour">GitHub</a></p>
+    </div>
+    <script>
+        let alignInput = document.getElementById("align");
+        let fontInput = document.getElementById("font");
+        let text = document.getElementById("text");
+
+        alignInput.addEventListener("input", () => {
+            let value = alignInput.value.toLowerCase();
+            if (value === "left") {
+                text.style.marginLeft = "0";
+            } else if (value === "center") {
+                text.style.marginLeft = "auto";
+                text.style.marginRight = "auto";
+                text.style.textAlign = "center";
+            } else if (value === "right") {
+                text.style.marginLeft = "auto";
+                text.style.marginRight = "0";
+                text.style.textAlign = "right";
+            }
+        });
+
+        fontInput.addEventListener("input", () => {
+            text.style.fontSize = fontInput.value;
+        });
+    </script>
+</body>
+
+</html>
